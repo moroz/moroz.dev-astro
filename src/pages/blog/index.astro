@@ -1,9 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getSortedPosts } from "../../lib/blog";
 
 const POSTS_PER_PAGE = 20;
-const allPosts = await getCollection('blog');
+const allPosts = await getSortedPosts()
 ---
 
 <Layout title="Blog">

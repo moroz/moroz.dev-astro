@@ -16,7 +16,7 @@ Wywiad Osoby Pierwszej z Osobą Drugą</span></p>
 <span class="strsm">Osoba Pierwsza:</span> Powiedz mi, co się wczoraj działo.</p>
 
 <p class="person2">
-<span class="strsm">Osoba Druga:</span> Powinieneś raczej spytać, co się <em>nie</em> działo. Najpierw <span style={{ letterSpacing: '0.16em' }}>poszłem</span> do „1855”. Było to gdzieś o jedenastej.</p>
+<span class="strsm">Osoba Druga:</span> Powinieneś raczej spytać, co się <em>nie</em> działo. Najpierw <span style="letter-spacing:.16em">poszłem</span> do „1855”. Było to gdzieś o jedenastej.</p>
 
 <p class="person1">
 <span class="strsm">Osoba Pierwsza:</span> Czy były jakieś fajne dziunie?</p>
@@ -29,7 +29,7 @@ Wywiad Osoby Pierwszej z Osobą Drugą</span></p>
 <p><em>Didaskalium: TU MUSIMY PIERDOLNĄĆ JAKIŚ FRAZES</em></p>
 
 <p class="person1">
-<span class="strsm">Osoba Pierwsza:</span> W Chinach <em>fazhan</em> następuje bardzo szybko. Stare chłopskie chaty z dnia na dzień zrównuje się tu z ziemią, by równie szybko wyrosły na ich miejscu apartamentowce i drapacze chmur. Stylówy dziewcząt również podążają za tym samym <span style={{ letterSpacing: '0.16em' }}>trądem</span>.</p>
+<span class="strsm">Osoba Pierwsza:</span> W Chinach <em>fazhan</em> następuje bardzo szybko. Stare chłopskie chaty z dnia na dzień zrównuje się tu z ziemią, by równie szybko wyrosły na ich miejscu apartamentowce i drapacze chmur. Stylówy dziewcząt również podążają za tym samym <span style="letter-spacing:.16em">trądem</span>.</p>
 
 <p class="person2"><span class="strsm">Osoba Druga:</span> Spotkałem tam też Caystal, tę uroczą dziewczynę, którą zawsze można znaleźć w „1855”.</p>
 
