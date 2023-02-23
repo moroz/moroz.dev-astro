@@ -1,14 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getSortedPostData } from "../../lib/api/blog.ts";
+import { getCollection } from "astro:content";
 
 const POSTS_PER_PAGE = 20;
-const allPosts = await getSortedPostData();
-const pageCount = Math.ceil(allPosts.length / POSTS_PER_PAGE);
-const posts = allPosts.slice(0, POSTS_PER_PAGE);
+const allPosts = await getCollection('blog');
 ---
 
 <Layout title="Blog">
   <h1>Blog</h1>
-  <pre>{JSON.stringify(posts, null, 2)}</pre>
+  <pre>{JSON.stringify(allPosts, null, 2)}</pre>
 </Layout>
