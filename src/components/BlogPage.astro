@@ -1,0 +1,18 @@
+---
+import { CollectionEntry } from "astro:content";
+import Layout from "../layouts/ContentLayout.astro";
+import BlogEntry from "./BlogEntry.astro";
+
+export interface Props {
+  posts: CollectionEntry<'blog'>[];
+  page: number;
+  totalPages: number;
+}
+const { posts } = Astro.props;
+---
+
+<Layout title="Blog">
+  {posts.map((item) => (
+    <BlogEntry post={item} />
+  ))}
+</Layout>

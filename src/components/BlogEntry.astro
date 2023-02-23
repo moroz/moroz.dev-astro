@@ -1,0 +1,45 @@
+---
+import { CollectionEntry } from "astro:content";
+import { formatDate } from "../lib/dateHelpers.ts";
+
+export interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const href = `/blog/${post.slug}`;
+---
+
+<article class="link-card">
+  <p class="date">{formatDate(post.data.date)}</p>
+	<a href={href}>
+		<h2>
+			{post.data.title}
+			<span>&rarr;</span>
+		</h2>
+	</a>
+  {post.data.summary ?
+    <div class="summary">
+      {post.data.summary}
+    </div>
+  : null}
+</article>
+
+<style lang="scss">
+  a:link, a:visited {
+    color: inherit;
+  }
+
+  a:hover {
+    color: var(--link-color);
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .date {
+    margin-bottom: 0;
+    color: var(--dimmed-text);
+  }
+</style>

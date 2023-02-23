@@ -1,16 +1,11 @@
 ---
 import Layout from "../../layouts/ContentLayout.astro";
-import Card from "../../components/Card.astro";
+import BlogPage from "../../components/BlogPage.astro";
 import { getSortedPosts } from "../../lib/blog";
 
 const POSTS_PER_PAGE = 20;
-const allPosts = await getSortedPosts()
+const allPosts = await getSortedPosts();
+const pageCount = Math.ceil(allPosts / POSTS_PER_PAGE);
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
 ---
-
-<Layout title="Blog">
-  {allPosts.map((item) => (
-    <Card title={item.data.title} href={`/blog/${item.slug}`}>
-      {item.data.summary ?? ""}
-    </Card>
-  ))}
-</Layout>
+<BlogPage posts={posts} page={1} totalPages={pageCount} />
