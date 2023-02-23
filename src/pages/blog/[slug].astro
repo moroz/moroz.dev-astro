@@ -6,11 +6,11 @@ import BlogPost from '../../layouts/BlogPost.astro';
 export async function getStaticPaths() {
   const allPosts = await getSortedPosts();
   return allPosts.map((post) => (
-    { params: { slug: post.slug } }
+    { params: { slug: post.slug }, props: { post } }
   ))
 }
 
-const post = await getEntryBySlug('blog', Astro.params.slug);
+const post = Astro.props.post;
 const { Content } = await post.render();
 ---
 
