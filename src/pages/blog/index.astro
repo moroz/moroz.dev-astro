@@ -1,5 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/ContentLayout.astro";
+import Card from "../../components/Card.astro";
 import { getSortedPosts } from "../../lib/blog";
 
 const POSTS_PER_PAGE = 20;
@@ -7,10 +8,9 @@ const allPosts = await getSortedPosts()
 ---
 
 <Layout title="Blog">
-  <h1>Blog</h1>
   {allPosts.map((item) => (
-    <li>
-      <a href={`/blog/${item.slug}`}>{item.data.title}</a>
-    </li>
+    <Card title={item.data.title} href={`/blog/${item.slug}`}>
+      {item.data.summary ?? ""}
+    </Card>
   ))}
 </Layout>
