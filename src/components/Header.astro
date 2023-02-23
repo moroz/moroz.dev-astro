@@ -1,8 +1,18 @@
-<header>
+<header id="header">
   <a href="/">
     <h1>moroz.dev</h1>
   </a>
 </header>
+
+<script>
+  function setUpHeaderEffect() {
+    const header = document.getElementById("header");
+    if (!header) return;
+    console.log("I have been executed");
+  }
+
+  setUpHeaderEffect();
+</script>
 
 <style lang="scss">
   @import "../styles/_variables.sass";
