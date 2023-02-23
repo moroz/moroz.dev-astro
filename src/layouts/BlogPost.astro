@@ -3,8 +3,8 @@ export interface Props {
   title: string;
 }
 
-const { title } = Astro.props.frontmatter;
 import BaseLayout from './Layout.astro';
+const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>

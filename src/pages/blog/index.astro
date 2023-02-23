@@ -8,5 +8,9 @@ const allPosts = await getCollection('blog');
 
 <Layout title="Blog">
   <h1>Blog</h1>
-  <pre>{JSON.stringify(allPosts, null, 2)}</pre>
+  {allPosts.map((item) => (
+    <li>
+      <a href={`/blog/${item.slug}`}>{item.data.title}</a>
+    </li>
+  ))}
 </Layout>
