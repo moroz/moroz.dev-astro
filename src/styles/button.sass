@@ -1,0 +1,14 @@
+.button
+  color: $primary
+  text-decoration: none
+  display: inline-block
+  padding: .6em 1.25em
+  border: 2px solid var(--primary)
+  border-radius: 10px
+  transition: .2s ease-in-out
+
+  &:hover
+    background: transparentize(lighten($primary, 10%), .8)
+
+  &:visited
+    color: inherit

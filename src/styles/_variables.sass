@@ -1,0 +1,56 @@
+$mobile-width: 550px
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin mobile
+  @media (max-width: #{$mobile-width})
+    @content
+
+@mixin gt-mobile
+  @media (min-width: #{$mobile-width + 1px})
+    @content
+
+@mixin tablet
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @content
+
+@mixin desktop
+  @media (min-width: #{$desktop-width})
+    @content
+
+@mixin ios
+  @supports (-webkit-touch-callout: none)
+    @content
+
+=system-font
+  font-family: $font-system
+
+=default-font
+  font-family: $font-sans
+
+/* Only used for the background-clip hack */
+@mixin non-retina
+  @media not screen and (-webkit-min-device-pixel-ratio: 2)
+    @content
+
+$font-system: system-ui, -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol, Noto Color Emoji, PingFang TC, Hiragino Sans GB W3, Noto Sans CJK TC, Source Han Sans TW, Source Han Sans SC, Droid Sans Fallback, Microsoft Yahei, Microsoft JhengHei, \\5fae\8f6f\96c5\9ed1, Noto Sans TC, STXihei, \\534e\6587\7ec6\9ed1
+
+$font-sans: "Merriweather Sans", $font-system
+
+$font-monospace: "Fira Mono", SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace
+
+$header-height: 90px
+$primary: #DB0021
+$body-fg: var(--body-fg)
+$body-bg: var(--body-bg)
+$navbar-bg: $body-fg
+
+$mobile-menu-unit: 65px
+$mobile-header-height: $mobile-menu-unit
+
+$mobile-content-padding-x: 20px
+$mobile-content-padding-y: 0
+$mobile-content-padding: $mobile-content-padding-y $mobile-content-padding-x
+
+$container-width: 1000px
+$hamburger-width: $mobile-menu-unit

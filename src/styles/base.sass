@@ -1,0 +1,106 @@
+*, *::after, *::before
+  box-sizing: border-box
+
+html, body
+  margin: 0
+  padding: 0
+  font-size: 100%
+
+body
+  background: var(--body-bg)
+  color: var(--body-fg)
+  font-family: $font-system
+  font-size: 1.25rem
+  font-weight: 400
+  line-height: 1.5
+  +fluid-type($mobile-width, $desktop-width, 16px, 20px)
+  overflow-y: scroll
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-sans
+
+a:link
+  color: var(--link-color)
+  text-decoration: none
+
+a:visited
+  color: var(--link-visited)
+
+.layout
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+#main
+  flex: 1
+
+.page-title
+  +fluid-type(320px, 1600px, 24px, 48px)
+  margin-top: $header-height
+  +mobile
+    margin-top: $mobile-header-height
+  text-align: center
+
+.mt-0
+  margin-top: 0 !important
+
+.container
+  padding: 0 calc(50vw - #{$container-width * 0.5})
+  box-sizing: border-box
+
+  @media screen and (max-width: #{$container-width})
+    max-width: 100%
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+  &.is-centered
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    +gt-mobile
+      p
+        min-width: 800px
+
+  @media screen and (max-width: 800px)
+    width: 100%
+    padding: $mobile-content-padding-x
+
+
+.text-center
+  text-align: center
+
+code, pre
+  font-family: $font-monospace
+  word-break: break-word
+
+:not(pre) > code
+  background: var(--code-bg)
+  color: var(--code-fg)
+  font-size: .95em
+  // white-space: nowrap
+  line-height: 1.3
+  font-weight: bold
+  padding: 0 .125em
+  word-wrap: break-word
+
+pre
+  font-size: 1.1rem
+  overflow-x: auto
+
+  code
+    border-radius: 0.3125rem
+
++mobile
+  pre
+    display: flex
+    font-size: 1rem
+
+    code
+      overflow: visible
+      width: 100%
+
+.visually-hidden
+  opacity: 0
+  height: 0
+  transform: scale(0)
