@@ -5,10 +5,21 @@
 </header>
 
 <script>
+  const SCROLL_THRESHOLD = 40;
+
   function setUpHeaderEffect() {
     const header = document.getElementById("header");
-    if (!header) return;
-    console.log("I have been executed");
+    let isOpaque: boolean = false;
+
+    const handleScroll = () => {
+      const newValue = window.pageYOffset >= SCROLL_THRESHOLD;
+      if (newValue !== isOpaque) isOpaque = newValue; 
+      header.classList.toggle("opaque", isOpaque);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
   }
 
   setUpHeaderEffect();
@@ -19,13 +30,18 @@
 
   header {
     height: $header-height;
-    background: salmon;
     line-height: $header-height;
     display: flex;
     align-items: center;
     position: fixed;
     left: 0;
     right: 0;
+
+    transition: .2s ease-in-out;
+
+    &.opaque {
+      background: var(--surface-bg);
+    }
   }
 
   h1 {
