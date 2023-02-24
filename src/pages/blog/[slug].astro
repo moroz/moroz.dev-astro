@@ -1,13 +1,14 @@
 ---
 import { getSortedPosts } from "../../lib/blog";
-import { getEntryBySlug } from "astro:content";
-import BlogPost from '../../layouts/BlogPost.astro';
+import BlogPost from "../../layouts/BlogPost.astro";
+import CommentSection from "../../components/CommentSection.svelte";
 
 export async function getStaticPaths() {
   const allPosts = await getSortedPosts();
-  return allPosts.map((post) => (
-    { params: { slug: post.slug }, props: { post } }
-  ))
+  return allPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 const post = Astro.props.post;
@@ -16,4 +17,5 @@ const { Content } = await post.render();
 
 <BlogPost title={post.data.title}>
   <Content />
+  <CommentSection title={post.data.title} />
 </BlogPost>

@@ -3,10 +3,10 @@ export interface Props {
   title: string;
 }
 
-import ContentLayout from './ContentLayout.astro';
+import ContentLayout from "./ContentLayout.astro";
 const { title } = Astro.props;
 ---
 
 <ContentLayout title={title}>
-  <slot/>
-</BaseLayout>
+  <slot />
+</ContentLayout>
