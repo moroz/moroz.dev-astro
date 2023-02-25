@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import path from "path";
 
 // https://astro.build/config
 import svelte from "@astrojs/svelte";
@@ -7,8 +8,16 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: "dracula"
-    }
+      theme: "dracula",
+    },
   },
-  integrations: [svelte()]
+  integrations: [svelte()],
+  vite: {
+    resolve: {
+      alias: {
+        "@styles": path.resolve(process.cwd(), "src/styles"),
+      },
+    },
+  },
 });
+

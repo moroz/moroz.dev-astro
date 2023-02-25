@@ -13,9 +13,11 @@
 
     const handleScroll = () => {
       const newValue = window.pageYOffset >= SCROLL_THRESHOLD;
-      if (newValue !== isOpaque) isOpaque = newValue; 
-      header.classList.toggle("opaque", isOpaque);
-    }
+      if (newValue !== isOpaque) {
+        isOpaque = newValue;
+        header.classList.toggle("opaque", isOpaque);
+      }
+    };
 
     window.addEventListener("scroll", handleScroll);
 
@@ -36,8 +38,9 @@
     position: fixed;
     left: 0;
     right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 
     &.opaque {
       background: var(--surface-bg);
@@ -46,5 +49,6 @@
 
   h1 {
     line-height: 0;
+    font-size: 1.5rem;
   }
 </style>
