@@ -4,7 +4,7 @@ import { formatDate } from "../lib/dateHelpers.ts";
 import { marked } from "marked";
 
 export interface Props {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
@@ -14,12 +14,13 @@ const summary = post.data.summary && marked(post.data.summary);
 
 <article class="post-card">
   <p class="date">{formatDate(post.data.date)}</p>
-	<a href={href}>
-		<h2>{post.data.title}</h2>
-	</a>
-  {summary ?
-    <div class="summary" set:html={summary} />
-  : null}
+  <a href={href} class="title">
+    <h2>{post.data.title}</h2>
+  </a>
+  {summary ? <div class="summary" set:html={summary} /> : null}
+  <p class="read">
+    <a href={href}>Read the article</a>
+  </p>
 </article>
 
 <style lang="scss">
@@ -29,7 +30,8 @@ const summary = post.data.summary && marked(post.data.summary);
     margin-bottom: 1.5rem;
   }
 
-  a:link, a:visited {
+  a.title:link,
+  a.title:visited {
     color: inherit;
   }
 
@@ -52,6 +54,14 @@ const summary = post.data.summary && marked(post.data.summary);
   }
 
   .summary :global(p:first-of-type) {
-    margin-top: .25em;
+    margin-top: 0.25em;
+  }
+
+  .summary :global(p:last-of-type) {
+    margin-bottom: 0.25em;
+  }
+
+  .read {
+    margin-top: 0.25rem;
   }
 </style>

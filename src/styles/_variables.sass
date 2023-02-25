@@ -25,6 +25,14 @@ $desktop-width: 1024px
   @supports (-webkit-touch-callout: none)
     @content
 
+@mixin dark
+  @media (prefers-color-scheme: dark)
+    @content
+
+@mixin light
+  @media (prefers-color-scheme: light)
+    @content
+
 =system-font
   font-family: $font-system
 

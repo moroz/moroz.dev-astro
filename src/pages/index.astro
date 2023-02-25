@@ -3,30 +3,44 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="moroz.dev">
-  <section class="hero">
-    <h2 class="title">
-      Building the future.<br />
-      One line of code at a time.
-    </h2>
-    <p class="subtitle">
-      My name is Karol Moroz.<br />I am a software developer based in Poznań,
-      Poland.
-    </p>
-  </section>
+  <div class="landing">
+    <section class="hero">
+      <h2 class="title">
+        Building the future.<br />
+        One line of code at a time.
+      </h2>
+      <p class="subtitle">
+        My name is Karol Moroz.<br />I am a software developer based in Poznań,
+        Poland.
+      </p>
+    </section>
 
-  <section class="links">
-    <a href="https://github.com/moroz" target="_blank" nofollow class="github"
-      >Follow me on Github</a
-    >
-    <a href="/projects" class="projects">Side projects</a>
-  </section>
+    <section class="links">
+      <a href="https://github.com/moroz" target="_blank" nofollow class="github"
+        >Follow me on Github</a
+      >
+      <a href="/blog" class="projects">Read my blog</a>
+    </section>
+  </div>
 </Layout>
 
 <style lang="scss">
   @import "@styles/_variables.sass";
 
+  .landing {
+    padding: 1.5rem;
+    background-image: linear-gradient(transparent, var(--body-bg)),
+      url(../assets/dots.svg);
+
+    @include dark {
+      background-image: linear-gradient(transparent, var(--body-bg)),
+        url(../assets/dots-dark.svg);
+    }
+    background-size: auto, 20px;
+  }
+
   .hero {
-    margin-top: 2.5rem;
+    margin-top: 0;
   }
 
   .hero,
@@ -50,7 +64,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   a.github {
-    background: linear-gradient(to right, #fff, lighten($primary, 40%));
+    background: linear-gradient(to right, #fff, lighten($primary, 25%));
     color: black;
   }
 
@@ -60,7 +74,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .links {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9em;
 
     display: flex;
@@ -73,6 +87,8 @@ import Layout from "../layouts/Layout.astro";
       align-items: center;
       height: 2.5rem;
       padding: 0 1em;
+
+      box-shadow: 0 5px 25px transparentize($primary, 0.5);
     }
   }
 </style>

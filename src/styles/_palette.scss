@@ -39,7 +39,8 @@ $light: (
   "emph-text": $light-emph-text,
   "dimmed-text": $light-dimmed-text,
   "code-bg": #f4f4f4,
-  "code-fg": #14806A
+  "code-fg": #14806A,
+  "border": #ccc
 );
 
 $dark: (
@@ -73,17 +74,6 @@ $dark: (
   "emph-text": $dark-emph-text,
   "dimmed-text": $dark-dimmed-text,
   "code-bg": #000,
-  "code-fg": #ffb000
+  "code-fg": #ffb000,
+  "border": rgba(255, 255, 255, .15)
 );
-
-@mixin dark {
-  @media (prefers-color-scheme: dark) {
-    @content;
-  }
-}
-
-@mixin light {
-  @media (prefers-color-scheme: light) {
-    @content;
-  }
-}

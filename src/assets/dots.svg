@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8.7819996"
+   height="8.7819996"
+   viewBox="0 0 2.3235704 2.3235707"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="dots.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="34.494098"
+     inkscape:cx="7.0591787"
+     inkscape:cy="4.0296749"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     inkscape:window-x="1728"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.01099384,-0.0026795)">
+    <circle
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.264583"
+       id="path114"
+       cx="0.01098671"
+       cy="2.3262432"
+       r="0.12726048" />
+    <circle
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.264583"
+       id="circle224"
+       cx="0.01098671"
+       cy="0.0026723701"
+       r="0.12726048" />
+    <circle
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.264583"
+       id="circle307"
+       cx="2.3392272"
+       cy="0.0026723701"
+       r="0.12726048" />
+    <circle
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.264583"
+       id="circle309"
+       cx="2.3392272"
+       cy="2.3262432"
+       r="0.12726048" />
+    <circle
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.264583"
+       id="circle665"
+       cx="1.1727792"
+       cy="1.1644367"
+       r="0.12726048" />
+  </g>
+</svg>
