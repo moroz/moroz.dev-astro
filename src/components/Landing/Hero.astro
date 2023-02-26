@@ -24,8 +24,9 @@
 
   .landing {
     position: relative;
-    height: 100vh;
-    padding: 1.5rem;
+    height: calc(100vh - #{$header-height});
+    padding-top: 1.5rem;
+    overflow: hidden;
     background-image: linear-gradient(transparent, var(--body-bg)),
       url(../../assets/dots.svg);
 
@@ -100,9 +101,19 @@
   }
 
   .km {
-    max-height: 70vh;
+    height: 70vh;
     position: absolute;
-    bottom: $header-height;
+    bottom: 0;
     right: 3rem;
+
+    @media screen and (max-width: #{rem-calc(1300px)}) {
+      height: 60vh;
+    }
+
+    @media screen and (max-width: #{rem-calc(450px)}) {
+      height: 50vh;
+    }
+
+    filter: drop-shadow(0 0 20px transparentize($primary, 0.5));
   }
 </style>

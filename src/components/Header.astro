@@ -4,6 +4,7 @@
   </a>
 </header>
 
+<!-- 
 <script>
   const SCROLL_THRESHOLD = 40;
 
@@ -26,6 +27,7 @@
 
   setUpHeaderEffect();
 </script>
+  -->
 
 <style lang="scss">
   @import "../styles/_variables.sass";
@@ -40,12 +42,9 @@
     right: 0;
     border-bottom: 1px solid var(--border);
     padding: 0 1rem;
-
+    z-index: 10;
     transition: 0.2s ease-in-out;
-
-    &.opaque {
-      background: var(--surface-bg);
-    }
+    background: var(--surface-bg);
   }
 
   h1 {
