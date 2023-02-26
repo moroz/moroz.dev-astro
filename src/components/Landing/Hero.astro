@@ -16,12 +16,15 @@
     >
     <a href="/blog" class="projects">Read my blog</a>
   </section>
+  <img src="/km.webp" class="km" />
 </div>
 
 <style lang="scss">
   @import "@styles/_variables.sass";
 
   .landing {
+    position: relative;
+    height: 100vh;
     padding: 1.5rem;
     background-image: linear-gradient(transparent, var(--body-bg)),
       url(../../assets/dots.svg);
@@ -94,5 +97,12 @@
         height: 2.75rem;
       }
     }
+  }
+
+  .km {
+    max-height: 70vh;
+    position: absolute;
+    bottom: $header-height;
+    right: 3rem;
   }
 </style>

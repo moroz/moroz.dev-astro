@@ -26,38 +26,13 @@ a:link
 a:visited
   color: var(--link-visited)
 
-.layout
-  display: flex
-  min-height: 100vh
-  flex-direction: column
-
-#main
-  flex: 1
-
-.page-title
-  +fluid-type(320px, 1600px, 24px, 48px)
-  margin-top: $header-height
-  +mobile
-    margin-top: $mobile-header-height
-  text-align: center
-
 .container
   padding: 0 calc(50vw - #{$container-width * 0.5})
-  box-sizing: border-box
 
   @media screen and (max-width: #{$container-width})
     max-width: 100%
     padding-left: 1.5rem
     padding-right: 1.5rem
-
-  &.is-centered
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    +gt-mobile
-      p
-        min-width: 800px
 
   @media screen and (max-width: 800px)
     width: 100%
