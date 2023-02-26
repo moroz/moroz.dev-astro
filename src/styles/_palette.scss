@@ -32,7 +32,7 @@ $light: (
   "red": rgb(255, 59, 48),
   "error": rgb(255, 59, 48),
   "purple": rgb(175, 82, 222),
-  "link-color": $light-primary,
+  "link-color": darken($light-primary, 13%),
   "link-visited": darken(rgb(175, 82, 222), 20%),
   "primary": $light-primary,
   "placeholder": #aaa,

@@ -5,10 +5,12 @@ const blogCollection = defineCollection({
     title: z.string(),
     date: z.date(),
     draft: z.boolean().optional(),
-    summary: z.string().optional()
-  })
+    summary: z.string().optional(),
+  }),
 });
 
 export const collections = {
-  blog: blogCollection
+  blog: blogCollection,
 };
+
+export const POSTS_PER_PAGE = 20;

@@ -1,0 +1,26 @@
+---
+import Layout from "@layouts/ContentLayout.astro";
+import BlogPage from "@components/BlogPage.astro";
+import { getSortedPosts } from "@lib/blog";
+import { POSTS_PER_PAGE } from "@/content/config";
+
+export const getStaticPaths = async () => {
+  const allPosts = await getSortedPosts();
+  const pageCount = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  console.log(pageCount);
+
+  return new Array(pageCount - 1).fill(null).map((_, i) => {
+    const page = i + 2;
+    const offset = POSTS_PER_PAGE + page * POSTS_PER_PAGE;
+    const posts = allPosts.slice(20, 40);
+    return {
+      params: { page },
+      props: { page, posts, pageCount },
+    };
+  });
+};
+
+const { page, posts, pageCount } = Astro.props;
+---
+
+<BlogPage posts={posts} page={page} totalPages={pageCount} />
