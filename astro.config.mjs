@@ -3,6 +3,7 @@ import path from "path";
 
 // https://astro.build/config
 import svelte from "@astrojs/svelte";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
       theme: "dracula",
     },
   },
-  integrations: [svelte()],
+  integrations: [svelte(), mdx()],
   vite: {
     resolve: {
       alias: {
@@ -20,4 +21,3 @@ export default defineConfig({
     },
   },
 });
-

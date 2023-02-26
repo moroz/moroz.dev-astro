@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://moroz.dev
+
+# Sitemaps
+Sitemap: https://moroz.dev/sitemap.xml
