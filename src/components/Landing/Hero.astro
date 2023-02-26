@@ -27,18 +27,22 @@
     height: calc(100vh - #{$header-height});
     padding-top: 1.5rem;
     overflow: hidden;
-    background-image: linear-gradient(transparent, var(--body-bg)),
-      url(../../assets/dots.svg);
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url(/bg.jpg);
+
+    background-position: center;
 
     @include desktop {
       padding-top: 3rem;
     }
 
     @include dark {
-      background-image: linear-gradient(transparent, var(--body-bg)),
-        url(../../assets/dots-dark.svg);
+      background-image: url(/bg-dark.jpg);
     }
-    background-size: auto, 20px;
+    background-size: auto, cover, 20px;
   }
 
   .hero {
@@ -68,8 +72,8 @@
   }
 
   a.github {
-    background: linear-gradient(to right, #fff, lighten($primary, 25%));
-    color: black;
+    background: var(--body-bg);
+    color: var(--body-fg);
   }
 
   a.projects {
@@ -86,12 +90,11 @@
     gap: 1em;
 
     a {
-      border-radius: rem-calc(10);
       display: inline-flex;
       align-items: center;
       height: 2.5rem;
       padding: 0 1em;
-
+      border: 1px solid var(--border);
       box-shadow: 0 5px 25px transparentize($primary, 0.5);
 
       @include desktop {
@@ -114,6 +117,6 @@
       height: 50vh;
     }
 
-    filter: drop-shadow(0 0 20px transparentize($primary, 0.5));
+    filter: saturate(120%) drop-shadow(0 0 20px transparentize($primary, 0.5));
   }
 </style>
