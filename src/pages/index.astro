@@ -32,6 +32,10 @@ import Layout from "../layouts/Layout.astro";
     background-image: linear-gradient(transparent, var(--body-bg)),
       url(../assets/dots.svg);
 
+    @include desktop {
+      padding-top: 3rem;
+    }
+
     @include dark {
       background-image: linear-gradient(transparent, var(--body-bg)),
         url(../assets/dots-dark.svg);
@@ -49,11 +53,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .title {
-    @include fluid-type(rem-calc(768), rem-calc(1280), 1.875rem, 3rem);
+    @include fluid-type(rem-calc(768), rem-calc(1280), 1.5rem, 3rem);
     line-height: 1.125;
     margin-bottom: 0;
 
-    @media screen and (max-width: #{rem-calc(768)}) {
+    @include lt-tablet {
       font-size: 1.5rem;
     }
   }
@@ -61,6 +65,8 @@ import Layout from "../layouts/Layout.astro";
   .subtitle {
     margin: 0.75em 0 1.5rem;
     font-weight: 500;
+    color: var(--emph-text);
+    font-size: 0.9em;
   }
 
   a.github {
@@ -89,6 +95,10 @@ import Layout from "../layouts/Layout.astro";
       padding: 0 1em;
 
       box-shadow: 0 5px 25px transparentize($primary, 0.5);
+
+      @include desktop {
+        height: 2.75rem;
+      }
     }
   }
 </style>

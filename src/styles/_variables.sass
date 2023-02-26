@@ -21,6 +21,10 @@ $desktop-width: 1024px
   @media (min-width: #{$desktop-width})
     @content
 
+@mixin lt-tablet
+  @media (max-width: #{$tablet-width})
+    @content
+
 @mixin ios
   @supports (-webkit-touch-callout: none)
     @content
