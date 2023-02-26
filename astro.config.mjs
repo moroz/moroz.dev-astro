@@ -17,6 +17,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@styles": path.resolve(process.cwd(), "src/styles"),
+        "@components": path.resolve(process.cwd(), "src/components"),
       },
     },
   },

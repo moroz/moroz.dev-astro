@@ -1,25 +1,52 @@
 ---
 export interface Props {
   src: string;
+  darkSrc?: string;
 }
 
-const { src } = Astro.props;
+const { src, darkSrc } = Astro.props;
 ---
 
 <figure>
-  <img src={src} />
+  <a href={src} title="Click to enlarge" target="_blank">
+    <picture>
+      <source
+        srcset={src}
+        media={darkSrc ? "(prefers-color-scheme: light)" : undefined}
+      />
+      {
+        darkSrc ? (
+          <source srcset={darkSrc} media={"(prefers-color-scheme: dark)"} />
+        ) : null
+      }
+      <img src={src} />
+    </picture>
+  </a>
   <figcaption>
     <slot />
   </figcaption>
 </figure>
 
 <style lang="scss">
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.25em 0;
+  }
+
   img {
     max-width: 100%;
+    max-height: 60vh;
   }
 
   figcaption {
     text-align: center;
     font-size: 0.9em;
+    counter-increment: figure;
+
+    &::before {
+      content: "Fig. " counter(figure) ": ";
+    }
   }
 </style>
