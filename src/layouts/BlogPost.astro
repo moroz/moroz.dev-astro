@@ -7,6 +7,12 @@ import ContentLayout from "./ContentLayout.astro";
 const { title } = Astro.props;
 ---
 
-<ContentLayout title={title}>
+<ContentLayout title={title} class="blog-post">
   <slot />
 </ContentLayout>
+
+<style>
+  .blog-post {
+    counter-reset: figure;
+  }
+</style>

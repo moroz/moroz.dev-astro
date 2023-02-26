@@ -3,9 +3,10 @@ import Layout from "../../layouts/ContentLayout.astro";
 import BlogPage from "../../components/BlogPage.astro";
 import { getSortedPosts } from "../../lib/blog";
 
-const POSTS_PER_PAGE = 20;
+const POSTS_PER_PAGE = 30;
 const allPosts = await getSortedPosts();
 const pageCount = Math.ceil(allPosts / POSTS_PER_PAGE);
 const posts = allPosts.slice(0, POSTS_PER_PAGE);
 ---
+
 <BlogPage posts={posts} page={1} totalPages={pageCount} />
