@@ -17,7 +17,7 @@ When building GraphQL APIs, regardless of the specific implementation or languag
 A common example would be the type definition for a pagination response.
 Unless you're doing Relay-style pagination, there is no standardized structure for GraphQL pagination responses, so the following is my own arbitrary approach:
 
-```gql
+```graphql
 type Pokemon {
   id: ID!
   name: String!

@@ -6,13 +6,17 @@ import svelte from "@astrojs/svelte";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
+  site: "https://moroz.dev",
   markdown: {
     shikiConfig: {
       theme: "dracula",
     },
   },
-  integrations: [svelte(), mdx()],
+  integrations: [svelte(), mdx(), sitemap()],
   vite: {
     resolve: {
       alias: {
@@ -25,3 +29,4 @@ export default defineConfig({
     },
   },
 });
+
