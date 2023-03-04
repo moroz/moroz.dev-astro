@@ -1,0 +1,10 @@
+---
+import Layout from "@layouts/ContentLayout.astro";
+import VideoEntry from "@components/VideoEntry.astro";
+import { getSortedVideos } from "@lib/blog";
+const videos = await getSortedVideos();
+---
+
+<Layout title="Videos">
+  {videos.map((video) => <VideoEntry video={video} />)}
+</Layout>

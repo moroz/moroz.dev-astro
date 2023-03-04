@@ -1,0 +1,26 @@
+---
+import { CollectionEntry } from "astro:content";
+import { formatDate } from "@lib/dateHelpers";
+
+export interface Props {
+  video: CollectionEntry<"video">;
+}
+
+const video = Astro.props.video;
+const { youtube, title, date } = video.data;
+const thumbnail = `https://img.youtube.com/vi/${youtube}/maxresdefault.jpg`;
+const url = `https://www.youtube.com/watch?v=${youtube}`;
+---
+
+<a class="video_entry" target="_blank" rel="noreferrer noopener" href={url}>
+  <img src={thumbnail} alt={title} />
+  <div class="meta">
+    <p class="date">{formatDate(date)}</p>
+    <p class="title">{title}</p>
+  </div>
+</a>
+
+<style lang="scss">
+  .video_entry {
+  }
+</style>
