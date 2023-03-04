@@ -5,6 +5,23 @@ import { getSortedVideos } from "@lib/blog";
 const videos = await getSortedVideos();
 ---
 
-<Layout title="Videos">
-  {videos.map((video) => <VideoEntry video={video} />)}
+<Layout title="Videos" fullWidth>
+  <div class="grid">
+    {videos.map((video) => <VideoEntry video={video} />)}
+  </div>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/_variables.sass";
+
+  .grid {
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    gap: 1.5rem;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

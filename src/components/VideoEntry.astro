@@ -22,5 +22,31 @@ const url = `https://www.youtube.com/watch?v=${youtube}`;
 
 <style lang="scss">
   .video_entry {
+    img {
+      display: block;
+      background: var(--surface-bg);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      transition: 0.2s ease-in-out;
+    }
+    overflow: hidden;
+
+    &:hover {
+      img {
+        filter: saturate(150%);
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .date {
+    color: var(--dimmed-text);
+  }
+
+  .title {
+    color: var(--body-fg);
   }
 </style>

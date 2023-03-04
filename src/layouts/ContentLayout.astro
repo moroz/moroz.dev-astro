@@ -2,15 +2,28 @@
 export interface Props {
   title: string;
   class?: string;
+  fullWidth?: boolean;
 }
 
 import BaseLayout from "./Layout.astro";
-const { title, class: className } = Astro.props;
+const { title, class: className, fullWidth = false } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <main class:list={["container", className]}>
+  <main class:list={["container", className, fullWidth && "is-fullwidth"]}>
     <h1>{title}</h1>
     <slot />
   </main>
 </BaseLayout>
+
+<style lang="scss">
+  @import "@styles/_variables.sass";
+
+  h1 {
+    text-align: center;
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+</style>

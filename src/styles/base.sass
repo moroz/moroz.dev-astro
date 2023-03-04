@@ -38,6 +38,11 @@ a:visited
     width: 100%
     padding: $mobile-content-padding-x
 
+  &.is-fullwidth
+    @media screen and (min-width: #{$container-width})
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+
 .visually-hidden
   opacity: 0
   height: 0
