@@ -27,22 +27,9 @@
     height: calc(100vh - #{$header-height});
     padding-top: 1.5rem;
     overflow: hidden;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.3),
-        rgba(255, 255, 255, 0.3)
-      ),
-      url(/bg.jpg);
-
-    background-position: center;
-
     @include desktop {
       padding-top: 3rem;
     }
-
-    @include dark {
-      background-image: url(/bg-dark.jpg);
-    }
-    background-size: auto, cover, 20px;
   }
 
   .hero {

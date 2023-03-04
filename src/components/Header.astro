@@ -2,6 +2,11 @@
   <a href="/">
     <h1>moroz.dev</h1>
   </a>
+
+  <nav>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
+  </nav>
 </header>
 
 <style lang="scss">
@@ -20,11 +25,32 @@
     z-index: 10;
     transition: 0.2s ease-in-out;
     background: var(--surface-bg);
+    overflow: hidden;
   }
 
   h1 {
     line-height: 0;
     font-size: 1.5rem;
     color: var(--body-fg);
+  }
+
+  nav {
+    margin-left: auto;
+    margin-right: 1rem;
+
+    display: flex;
+    gap: 0.25rem;
+
+    a:link,
+    a:visited {
+      color: inherit;
+      display: inline-block;
+      padding: 0 0.8em;
+      transition: 0.1s ease-in-out;
+    }
+
+    a:hover {
+      background: var(--surface-hover-bg);
+    }
   }
 </style>
