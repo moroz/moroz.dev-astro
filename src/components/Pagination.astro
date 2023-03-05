@@ -3,4 +3,59 @@ export interface Props {
   pageCount: number;
   currentPage: number;
 }
+
+const { pageCount, currentPage } = Astro.props;
 ---
+
+{
+  pageCount > 1 ? (
+    <nav class="pagination">
+      {currentPage > 1 ? (
+        <a href={currentPage === 2 ? "/blog" : `/blog/page/${currentPage - 1}`}>
+          Older
+        </a>
+      ) : null}
+      {Array.from(new Array(pageCount)).map((_, i) => (
+        <a
+          href={i ? `/blog/page/${i + 1}` : "/blog"}
+          class={i + 1 === currentPage ? "active" : null}
+        >
+          {i + 1}
+        </a>
+      ))}
+      {currentPage < pageCount ? (
+        <a href={`/blog/page/${currentPage + 1}`}>Newer</a>
+      ) : null}
+    </nav>
+  ) : null
+}
+
+<style lang="scss">
+  nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  a {
+    display: inline-flex;
+    min-width: 2.5em;
+    height: 2.5em;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-bg);
+    padding: 0 0.75em;
+
+    border-radius: 0.25em;
+
+    &:visited {
+      color: var(--body-fg);
+    }
+
+    &.active {
+      color: var(--primary);
+    }
+  }
+</style>

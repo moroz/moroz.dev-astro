@@ -1,6 +1,7 @@
 ---
 import { CollectionEntry } from "astro:content";
-import Layout from "../layouts/ContentLayout.astro";
+import Layout from "@layouts/ContentLayout.astro";
+import Pagination from "@components/Pagination.astro";
 import BlogEntry from "./BlogEntry.astro";
 
 export interface Props {
@@ -8,9 +9,10 @@ export interface Props {
   page: number;
   totalPages: number;
 }
-const { posts } = Astro.props;
+const { posts, totalPages, page } = Astro.props;
 ---
 
 <Layout title="Blog">
   {posts.map((item) => <BlogEntry post={item} />)}
+  <Pagination pageCount={totalPages} currentPage={page} />
 </Layout>

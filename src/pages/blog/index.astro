@@ -5,7 +5,7 @@ import { getSortedPosts } from "../../lib/blog";
 
 const POSTS_PER_PAGE = 20;
 const allPosts = await getSortedPosts();
-const pageCount = Math.ceil(allPosts / POSTS_PER_PAGE);
+const pageCount = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 const posts = allPosts.slice(0, POSTS_PER_PAGE);
 ---
 
