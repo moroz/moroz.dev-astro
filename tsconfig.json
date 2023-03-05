@@ -2,6 +2,8 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "paths": {
+      "@lib/*": ["./src/lib/*"],
+      "@interfaces": ["./src/interfaces/index.ts"],
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"]
     }

@@ -20,6 +20,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
+        "@interfaces": path.resolve(process.cwd(), "src/interfaces"),
         "@styles": path.resolve(process.cwd(), "src/styles"),
         "@components": path.resolve(process.cwd(), "src/components"),
         "@lib": path.resolve(process.cwd(), "src/lib"),
@@ -29,4 +30,3 @@ export default defineConfig({
     },
   },
 });
-

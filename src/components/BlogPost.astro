@@ -1,5 +1,6 @@
 ---
 import { CollectionEntry } from "astro:content";
+import { fetchPostComments } from "@lib/api/comments";
 
 import ContentLayout from "@layouts/ContentLayout.astro";
 import CommentSection from "@components/CommentSection.svelte";
@@ -10,11 +11,14 @@ export interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const url = `/blog/${post.slug}`;
+
+const { comments } = await fetchPostComments(url);
 ---
 
 <ContentLayout title={post.data.title} class="blog-post">
   <Content />
-  <CommentSection url={`/blog/${post.slug}`} title={post.data.title} />
+  <CommentSection url={url} title={post.data.title} comments={comments} />
 </ContentLayout>
 
 <style>
