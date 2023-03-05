@@ -18,7 +18,8 @@
 		"glob": "^8.1.0",
 		"marked": "^4.2.12",
 		"sass": "^1.58.3",
-		"svelte": "^3.54.0"
+		"svelte": "^3.54.0",
+		"vanilla-hamburger": "^0.2.3"
 	},
 	"devDependencies": {
 		"@types/glob": "^8.1.0",
