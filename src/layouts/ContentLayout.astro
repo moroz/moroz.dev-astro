@@ -11,7 +11,7 @@ const { title, class: className, fullWidth = false } = Astro.props;
 
 <BaseLayout title={title}>
   <main class:list={["container", className, fullWidth && "is-fullwidth"]}>
-    <h1>{title}</h1>
+    <h2>{title}</h2>
     <slot />
   </main>
 </BaseLayout>
@@ -23,7 +23,7 @@ const { title, class: className, fullWidth = false } = Astro.props;
     margin-bottom: 4.5em;
   }
 
-  h1 {
+  h2 {
     text-align: center;
 
     @include mobile {

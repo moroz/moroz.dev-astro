@@ -1,0 +1,24 @@
+---
+import { CollectionEntry } from "astro:content";
+
+import ContentLayout from "@layouts/ContentLayout.astro";
+import CommentSection from "@components/CommentSection.svelte";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<ContentLayout title={post.data.title} class="blog-post">
+  <Content />
+  <CommentSection url={`/blog/${post.slug}`} title={post.data.title} />
+</ContentLayout>
+
+<style>
+  .blog-post {
+    counter-reset: figure;
+  }
+</style>
