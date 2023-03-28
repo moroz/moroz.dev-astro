@@ -2,12 +2,15 @@
 import "@styles/app.sass";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+const BASE_URL = import.meta.env.PUBLIC_BASE_URL ?? "https://moroz.dev";
 
 export interface Props {
   title: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
+const { title, canonical } = Astro.props;
+const canonicalURL = `${BASE_URL}${canonical}`;
 ---
 
 <!DOCTYPE html>
@@ -16,6 +19,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {canonical && <link rel="canonical" href={canonicalURL} />}
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>

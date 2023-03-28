@@ -16,7 +16,7 @@ const url = `/blog/${post.slug}`;
 const { comments } = await fetchPostComments(url);
 ---
 
-<ContentLayout title={post.data.title} class="blog-post">
+<ContentLayout title={post.data.title} class="blog-post" canonical={url}>
   <Content />
   <CommentSection url={url} title={post.data.title} comments={comments} />
 </ContentLayout>
