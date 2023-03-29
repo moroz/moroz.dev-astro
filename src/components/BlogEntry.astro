@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const href = `/blog/${post.slug}`;
+const href = `/blog/${post.slug}/`;
 const summary = post.data.summary && marked(post.data.summary);
 ---
 

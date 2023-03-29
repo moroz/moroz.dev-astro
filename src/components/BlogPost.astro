@@ -11,7 +11,7 @@ export interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-const url = `/blog/${post.slug}`;
+const url = `/blog/${post.slug}/`;
 
 const { comments } = await fetchPostComments(url);
 ---
